@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 const cors = require("cors");
-const port = process.env.PORT || 6001;
+const port = process.env.PORT || 8000;
 const mongoose = require("mongoose");
 const jwt = require("jsonwebtoken");
 require("dotenv").config();
@@ -18,8 +18,9 @@ app.use(express.json());
 
 mongoose
   .connect(
-    `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@cluster0.qyyaa8q.mongodb.net/foodappdb?retryWrites=true&w=majority`
+    `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@cluster0.cdnl63o.mongodb.net/foodiedb?retryWrites=true&w=majority&appName=Cluster0`
   )
+  
   .then(console.log("mongodb connected successfully"))
   .catch((error) => console.log("error connecting to mongodb", error));
 
@@ -61,9 +62,9 @@ app.post("/create-payment-intent", async (req, res) => {
 });
 
 app.get("/", (req, res) => {
-  res.send("Hello World this is foodApp!");
+  res.send("Hello World this is foodie!");
 });
 
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`);
+  console.log(`app listening on port ${port}`);
 });

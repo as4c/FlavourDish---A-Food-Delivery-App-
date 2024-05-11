@@ -34,7 +34,7 @@ const Cards = ({ item }) => {
       };
 
       axios
-        .post("http://localhost:6001/carts", cartItem)
+        .post("http://localhost:8000/carts", cartItem)
         .then((response) => {
           console.log(response);
           if (response) {
