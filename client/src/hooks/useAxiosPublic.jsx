@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const axiosPublic = axios.create({
-  baseURL: "http://https://api-foodie.onrender.com",
+  baseURL: "https://api-foodie.onrender.com",
 });
 
 const useAxiosPublic = () => {

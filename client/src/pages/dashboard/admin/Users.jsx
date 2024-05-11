@@ -9,7 +9,7 @@ const Users = () => {
   const { refetch, data: users = [] } = useQuery({
     queryKey: ["users"],
     // queryFn: async () => {
-    //   const res = await fetch(`http://https://api-foodie.onrender.com/users`);
+    //   const res = await fetch(`https://api-foodie.onrender.com/users`);
     //   return res.json();
     // },
     queryFn: async () => {

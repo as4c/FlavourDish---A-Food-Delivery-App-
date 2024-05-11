@@ -34,7 +34,7 @@ const Cards = ({ item }) => {
       };
 
       axios
-        .post("http://https://api-foodie.onrender.com/carts", cartItem)
+        .post("https://api-foodie.onrender.com/carts", cartItem)
         .then((response) => {
           console.log(response);
           if (response) {
