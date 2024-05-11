@@ -1,19 +1,19 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
+const {VITE_API_KEY, VITE_AUTH_DOMAIN, VITE_PROJECT_ID, VITE_STORAGE_BUCKET, VITE_MESSAGEING_SENDER_ID, VITE_APP_ID, VITE_MEASUREMENT_ID} = process.env
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+
 const firebaseConfig = {
-  apiKey: "AIzaSyBX8j5ycuxB_EyHpyIssmC7agp5u8FmDEo",
-  authDomain: "foodie-77440.firebaseapp.com",
-  projectId: "foodie-77440",
-  storageBucket: "foodie-77440.appspot.com",
-  messagingSenderId: "883409489398",
-  appId: "1:883409489398:web:fe9ddb064e1ad8ca7d4bd7",
-  measurementId: "G-5EV20WL7K6"
+  apiKey: VITE_API_KEY,
+  authDomain: VITE_AUTH_DOMAIN,
+  projectId: VITE_PROJECT_ID,
+  storageBucket: VITE_STORAGE_BUCKET,
+  messagingSenderId: VITE_MESSAGEING_SENDER_ID,
+  appId: VITE_APP_ID, 
+  measurementId: VITE_MEASUREMENT_ID
 };
 
 // Initialize Firebase
