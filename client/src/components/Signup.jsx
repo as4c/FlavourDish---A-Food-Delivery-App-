@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form";
 import Modal from "./Modal";
 import { AuthContext } from "../contexts/AuthProvider";
 import axios from "axios";
-import useAxiosPublic from "../hooks/useAxiosPublic";
+import useAxiosPublic from "../layout/hooks/useAxiosPublic";
 
 const Signup = () => {
   const { signUpWithGmail, createUser, updateUserProfile } =
