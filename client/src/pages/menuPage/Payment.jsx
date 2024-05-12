@@ -15,7 +15,7 @@ const Payment = () => {
 
   useEffect(() => {
     const loadStripePromise = async () => {
-      const stripe = await loadStripe(import.meta.env.VITE_STRIPE_PUB_KEY);
+      const stripe = await loadStripe("pk_test_51LaBgqSHHk5YjedMUdKwzT1saMWp7WNccGt6FNAXdzwyIIJ05BdhOLofcde20M6x2HEEz8Q3OFZ820g6P1Xh6YMs00sZfrZBxf");
       setStripePromise(stripe);
     };
 
