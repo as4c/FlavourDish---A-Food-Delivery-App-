@@ -20,9 +20,9 @@ const CheckoutForm = ({ price, cart }) => {
       console.log("price is not a number");
       return;
     }
-    axiosSecure.post("/create-payment-intent", { price }).then((res) => {
+    axiosSecure.post("/create-payment-intent", { price }).then(async(res) => {
       console.log(res.data.clientSecret);
-      setClientSecret(res.data.clientSecret);
+      await setClientSecret(res.data.clientSecret);
     });
   }, [price, axiosSecure]);
   const handleSubmit = async (event) => {
@@ -50,7 +50,7 @@ const CheckoutForm = ({ price, cart }) => {
       setCardError("success");
       console.log("[PaymentMethod]", paymentMethod);
     }
-
+   
     const { paymentIntent, error: confirmError } =
       await stripe.confirmCardPayment(clientSecret, {
         payment_method: {
@@ -62,9 +62,10 @@ const CheckoutForm = ({ price, cart }) => {
         },
       });
     if (confirmError) {
-      console.log(confirmError);
+      console.log("confirmError....", confirmError);
     }
-    console.log(paymentIntent);
+    // console.log(paymentIntent);
+    console.log("payment intent....", paymentIntent.status)
     if (paymentIntent.status === "succeeded") {
       console.log(paymentIntent.id);
       setCardError(`Your transaction id is ${paymentIntent.id}`);

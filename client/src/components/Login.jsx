@@ -38,7 +38,7 @@ const Login = () => {
         };
 
         axiosPublic.post("/users", userInfo).then((response) => {
-          // console.log(response);
+          console.log(response);
           alert("Signin successful!");
           navigate(from, { replace: true });
         });

@@ -11,13 +11,14 @@ const verifyToken = require("../middleware/verifyToken");
 // post paymnet related info
 router.post("/", verifyToken, async (req, res) => {
   const payment = req.body;
+  
   try {
     const paymentRequest = await Payment.create(payment);
-
+    
     // deletecart items
     const cartIds = payment.cartItems.map((id) => new ObjectId(id));
     const deleteCartRequest = await Cart.deleteMany({ _id: { $in: cartIds } });
-    res.status(200).json(paymentRequest, deleteCartRequest);
+    res.status(200).json({paymentRequest, deleteCartRequest});
   } catch (error) {
     res.status(404).json({ message: error.message });
   }
